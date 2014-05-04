@@ -1,0 +1,53 @@
+" based on Vimgolf's .vimrc at
+" https://gist.github.com/igrigorik/759425#file-vimgolf-vimrc
+" To use this:
+" 1. Put under the homedir and named .vimrc
+" 2. Open vim with command line paramether "vim -u <this file> <files>" ?
+" 3. Load dynamically with command ":so <this file>"
+"
+
+" Basics of Vi
+set nocompatible        " use vim defaults
+set showcmd             " display incomplete commands
+set showmode            " dispaly the current mode
+"set nobackup            "? I still need the backup file. To check out why?
+"set visualbell t_vb=    " turn off error beep/flash. Dismissed for I comfortable with the beeps.
+set novisualbell        " turn off visual bell. It is said for disableds.
+
+" Appearance
+" background colorscheme highlight
+
+" Text editing
+set scrolloff=3         " keep 3 lines' padding when scrolling
+set number              " show line numbers
+"set relativenumber      "? Not in 7.2? How to determine the version?
+set ruler               " show the current row and column
+set backspace=indent,eol,start  " make that backspace key work the way it should. As default.
+
+set hlsearch            "? highlight searches How to clear them?
+set incsearch           " do incremental search
+set ignorecase          " ignore case when searching
+set smartcase           " no ignorecase if Uppercase char present
+set showmatch           "? jump to matches when entering regexp. Also about matching parentheses?
+"set matchtime=2         "? elapsing time for the parentheses match highlight
+
+" Coding
+set autoindent          " auto-indenting
+set smartindent         "? C-style indenting
+syntax on               " turn syntax highlighting on
+filetype on             " detect the type of file
+filetype indent on      " load indent file for specific file type
+
+set expandtab           " use spaces instead of tabs
+set smarttab            " enhance the tab insert. See help.
+set tabstop=4           " set width of a tab insert
+set shiftwidth=4        "? determines the leading tab size
+set shiftround          " indenting as the context at the line head
+set softtabstop=4       "? How <BS> deleting indents.
+
+set list listchars=tab:>\ ,trail:.  "? display unprintable chars. ? how to choose better? depends on terminal?
+
+" Patches
+set runtimepath=$VIMRUNTIME     "? turn off user scripts, https://github.com/igrigorik/vimgolf/issues/129
+set t_RV=               "? http://bugs.debian.org/608242, http://groups.google.com/group/vim_dev/browse_thread/thread/9770ea844cec3282
+
