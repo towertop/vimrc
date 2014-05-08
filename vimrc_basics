@@ -45,12 +45,12 @@ set shiftwidth=4        "? determines the leading tab size
 set shiftround          " indenting as the context at the line head
 set softtabstop=4       "? How <BS> deleting indents.
 
+if exists('+colorcolumn')  "add the 80 column line
+  set colorcolumn=80
+endif
+
 set list listchars=tab:>\ ,trail:.  "? display unprintable chars. ? how to choose better? depends on terminal?
 
 " Patches
 set runtimepath=$VIMRUNTIME     "? turn off user scripts, https://github.com/igrigorik/vimgolf/issues/129
 set t_RV=               "? http://bugs.debian.org/608242, http://groups.google.com/group/vim_dev/browse_thread/thread/9770ea844cec3282
-
-if exists('+colorcolumn')  "add the 80 column line
-  set colorcolumn=80
-endif
